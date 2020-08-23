@@ -9,7 +9,6 @@ class PlayerList extends Model
 {
 
     protected $table = "PlayerLists";
-    protected $dates = ["expired_at", "deleted_at", "updated_at", "created_at"];
 
     public static function getWithContoryBySimplePaginate($paginate_limit){
         try{
