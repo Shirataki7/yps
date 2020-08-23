@@ -60,6 +60,33 @@ INSERT INTO `countries` VALUES (1,'ブラジル',3,'A','2020-08-21 14:19:56',NUL
 UNLOCK TABLES;
 
 --
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `goals`
 --
 
@@ -109,6 +136,52 @@ LOCK TABLES `goals_tmp` WRITE;
 INSERT INTO `goals_tmp` VALUES ('クロアチア','ブラジル','前半11分',''),('ブラジル','クロアチア','前半29分','ネイマール'),('ブラジル','クロアチア','後半26分','ネイマール'),('ブラジル','クロアチア','後半46分','オスカル'),('メキシコ','カメルーン','後半16分','ペラルタ'),('スペイン','オランダ','前半27分','シャビアロンソ'),('オランダ','スペイン','前半44分','ファンペルシー'),('オランダ','スペイン','後半8分','ロッベン'),('オランダ','スペイン','後半20分','デフライ'),('オランダ','スペイン','後半27分','ファンペルシー'),('オランダ','スペイン','後半35分','ロッベン'),('チリ','オーストラリア','前半12分','サンチェス'),('チリ','オーストラリア','前半14分','バルディビア'),('オーストラリア','チリ','前半35分','ケーヒル'),('チリ','オーストラリア','後半47分','ボーセジュール'),('コロンビア','ギリシャ','前半5分','アルメロ'),('コロンビア','ギリシャ','後半13分','グティエレス'),('コロンビア','ギリシャ','後半48分','ロドリゲス'),('ウルグアイ','コスタリカ','前半24分','カバニ'),('コスタリカ','ウルグアイ','後半9分','キャンベル'),('コスタリカ','ウルグアイ','後半12分','ドゥアルテ'),('コスタリカ','ウルグアイ','後半39分','ウレニャ'),('イタリア','イングランド','前半35分','マルキジオ'),('イングランド','イタリア','前半37分','スタリッジ'),('イタリア','イングランド','後半5分','バロテリ'),('日本','コートジボワール','前半16分','本田'),('コートジボワール','日本','後半19分','ボニ'),('コートジボワール','日本','後半21分','ジェルビーニョ'),('エクアドル','スイス','前半22分','E・バレンシア'),('スイス','エクアドル','後半3分','メーメディ'),('スイス','エクアドル','後半48分','セフェロビッチ'),('フランス','ホンジュラス','前半45分','ベンゼマ'),('フランス','ホンジュラス','後半3分',''),('フランス','ホンジュラス','後半27分','ベンゼマ'),('アルゼンチン','ボスニア・ヘルツェゴビナ','前半3分',''),('アルゼンチン','ボスニア・ヘルツェゴビナ','後半20分','メッシ'),('ボスニア・ヘルツェゴビナ','アルゼンチン','後半40分','イビシェビッチ'),('ドイツ','ポルトガル','前半12分','ミュラー'),('ドイツ','ポルトガル','前半32分','フンメルス'),('ドイツ','ポルトガル','前半46分','ミュラー'),('ドイツ','ポルトガル','後半33分','ミュラー'),('米国','ガーナ','前半1分','デンプシー'),('ガーナ','米国','後半37分','A・アユー'),('米国','ガーナ','後半41分','ブルックス'),('アルジェリア','ベルギー','前半25分','フェグリ'),('ベルギー','アルジェリア','後半25分','フェライニ'),('ベルギー','アルジェリア','後半35分','メルテンス'),('韓国','ロシア','後半23分','イ・グノ'),('ロシア','韓国','後半29分','ケルジャコフ'),('オランダ','オーストラリア','前半20分','ロッベン'),('オーストラリア','オランダ','前半21分','ケーヒル'),('オーストラリア','オランダ','後半9分','ジェディナク'),('オランダ','オーストラリア','後半13分','ファンペルシー'),('オランダ','オーストラリア','後半23分','デパイ'),('チリ','スペイン','前半20分','バルガス'),('チリ','スペイン','前半43分','アランギス'),('クロアチア','カメルーン','前半11分','オリッチ'),('クロアチア','カメルーン','後半3分','ペリシッチ'),('クロアチア','カメルーン','後半16分','マンジュキッチ'),('クロアチア','カメルーン','後半28分','マンジュキッチ'),('コロンビア','コートジボワール','後半19分','ロドリゲス'),('コロンビア','コートジボワール','後半25分','キンテロ'),('コートジボワール','コロンビア','後半28分','ジェルビーニョ'),('ウルグアイ','イングランド','前半39分','スアレス'),('イングランド','ウルグアイ','後半30分','ルーニー'),('ウルグアイ','イングランド','後半40分','スアレス'),('コスタリカ','イタリア','前半44分','ルイス'),('フランス','スイス','前半17分','ジルー'),('フランス','スイス','前半18分','マチュイディ'),('フランス','スイス','前半40分','バルブエナ'),('フランス','スイス','後半22分','ベンゼマ'),('フランス','スイス','後半28分','シソコ'),('スイス','フランス','後半36分','ジェマイリ'),('スイス','フランス','後半42分','シャカ'),('ホンジュラス','エクアドル','前半31分','コストリー'),('エクアドル','ホンジュラス','前半34分','E・バレンシア'),('エクアドル','ホンジュラス','後半20分','E・バレンシア'),('アルゼンチン','イラン','後半46分','メッシ'),('ドイツ','ガーナ','後半6分','ゲッツェ'),('ガーナ','ドイツ','後半9分','A・アユー'),('ガーナ','ドイツ','後半18分','ジャン'),('ドイツ','ガーナ','後半26分','クローゼ'),('ナイジェリア','ボスニア・ヘルツェゴビナ','前半29分','オデムウィンジ'),('ベルギー','ロシア','後半43分','オリジ'),('アルジェリア','韓国','前半26分','スリマニ'),('アルジェリア','韓国','前半28分','ハリシェ'),('アルジェリア','韓国','前半38分','ジャブ'),('韓国','アルジェリア','後半5分','ソン・フンミン'),('アルジェリア','韓国','後半17分','ブラヒミ'),('韓国','アルジェリア','後半27分','ク・ジャチョル'),('ポルトガル','米国','前半5分','ナニ'),('米国','ポルトガル','後半19分','ジョーンズ'),('米国','ポルトガル','後半36分','デンプシー'),('ポルトガル','米国','後半50分','バレラ'),('スペイン','オーストラリア','前半36分','ビリャ'),('スペイン','オーストラリア','後半24分','フェルナンドトレス'),('スペイン','オーストラリア','後半37分','マタ'),('オランダ','チリ','後半32分','フェル'),('オランダ','チリ','後半47分','デパイ'),('ブラジル','カメルーン','前半17分','ネイマール'),('カメルーン','ブラジル','前半26分','マティプ'),('ブラジル','カメルーン','前半35分','ネイマール'),('ブラジル','カメルーン','後半4分','フレジ'),('ブラジル','カメルーン','後半39分','フェルナンジーニョ'),('メキシコ','クロアチア','後半27分','マルケス'),('メキシコ','クロアチア','後半30分','グアルダド'),('メキシコ','クロアチア','後半37分','エルナンデス'),('クロアチア','メキシコ','後半42分','ペリシッチ'),('ウルグアイ','イタリア','後半36分','ゴディン'),('コロンビア','日本','前半17分','グアドラード'),('日本','コロンビア','前半46分','岡崎'),('コロンビア','日本','後半10分','マルティネス'),('コロンビア','日本','後半37分','マルティネス'),('コロンビア','日本','後半45分','ロドリゲス'),('ギリシャ','コートジボワール','前半42分','サマラス'),('コートジボワール','ギリシャ','後半29分','ボニ'),('ギリシャ','コートジボワール','後半48分','サマラス'),('アルゼンチン','ナイジェリア','前半3分','メッシ'),('ナイジェリア','アルゼンチン','前半4分','ムサ'),('アルゼンチン','ナイジェリア','前半46分','メッシ'),('ナイジェリア','アルゼンチン','後半2分','ムサ'),('アルゼンチン','ナイジェリア','後半5分','ロホ'),('ボスニア・ヘルツェゴビナ','イラン','前半23分','ジェコ'),('ボスニア・ヘルツェゴビナ','イラン','後半14分','ピャニッチ'),('イラン','ボスニア・ヘルツェゴビナ','後半37分','グーチャンネジャド'),('ボスニア・ヘルツェゴビナ','イラン','後半38分','ブルシャイエビッチ'),('スイス','ホンジュラス','前半6分','シャキリ'),('スイス','ホンジュラス','前半31分','シャキリ'),('スイス','ホンジュラス','後半26分','シャキリ'),('ドイツ','米国','後半10分','ミュラー'),('ポルトガル','ガーナ','前半31分',''),('ガーナ','ポルトガル','後半12分','ジャン'),('ポルトガル','ガーナ','後半35分','C・ロナルド'),('ベルギー','韓国','後半33分','フェルトンゲン'),('ロシア','アルジェリア','前半6分','ココリン'),('アルジェリア','ロシア','後半15分','スリマニ'),('ブラジル','チリ','前半18分','ダビドルイス'),('チリ','ブラジル','前半32分','サンチェス'),('コロンビア','ウルグアイ','前半28分','ロドリゲス'),('コロンビア','ウルグアイ','後半5分','ロドリゲス'),('メキシコ','オランダ','後半3分','ドスサントス'),('オランダ','メキシコ','後半43分','スナイダー'),('オランダ','メキシコ','後半49分','フンテラール'),('コスタリカ','ギリシャ','後半7分','ルイス'),('ギリシャ','コスタリカ','後半46分','パパスタソプロス'),('フランス','ナイジェリア','後半34分','ポグバ'),('フランス','ナイジェリア','後半47分',''),('ドイツ','アルジェリア','延前2分','シュルレ'),('ドイツ','アルジェリア','延後15分','エジル'),('アルジェリア','ドイツ','延後16分','ジャブ'),('アルゼンチン','スイス','延後13分','ディマリア'),('ベルギー','米国','延前3分','デブルイネ'),('ベルギー','米国','延前15分','ルカク'),('米国','ベルギー','延後2分','グリーン'),('ドイツ','フランス','前半13分','フンメルス'),('ブラジル','コロンビア','前半7分','チアゴシウバ'),('ブラジル','コロンビア','前半7分','チアゴシウバ'),('コロンビア','ブラジル','後半35分','ロドリゲス'),('アルゼンチン','ベルギー','前半8分','イグアイン'),('ドイツ','ブラジル','前半11分','ミュラー'),('ドイツ','ブラジル','前半23分','クローゼ'),('ドイツ','ブラジル','前半24分','クロース'),('ドイツ','ブラジル','前半26分','クロース'),('ドイツ','ブラジル','前半29分','ケディラ'),('ドイツ','ブラジル','後半24分','シュルレ'),('ドイツ','ブラジル','後半34分','シュルレ'),('ブラジル','ドイツ','後半45分','オスカル'),('オランダ','ブラジル','前半3分','ファンペルシー'),('オランダ','ブラジル','前半17分','ブリント'),('オランダ','ブラジル','後半46分','ワイナルドゥム'),('ドイツ','アルゼンチン','延後8分','ゲッツェ');
 /*!40000 ALTER TABLE `goals_tmp` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2019_08_19_000000_create_failed_jobs_table',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `p_lists`
+--
+
+DROP TABLE IF EXISTS `p_lists`;
+/*!50001 DROP VIEW IF EXISTS `p_lists`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `p_lists` AS SELECT 
+ 1 AS `id`,
+ 1 AS `uniform_num`,
+ 1 AS `position`,
+ 1 AS `name`,
+ 1 AS `club`,
+ 1 AS `birth`,
+ 1 AS `height`,
+ 1 AS `weight`,
+ 1 AS `c_name`,
+ 1 AS `t_goals`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `pairings`
@@ -234,6 +307,36 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Final view structure for view `c_names`
 --
 
@@ -247,6 +350,24 @@ SET character_set_client = @saved_cs_client;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `c_names` AS select `p`.`id` AS `id`,`p`.`country_id` AS `country_id`,`c`.`name` AS `name` from (`players` `p` left join `countries` `c` on((`p`.`country_id` = `c`.`id`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `p_lists`
+--
+
+/*!50001 DROP VIEW IF EXISTS `p_lists`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `p_lists` AS select `p`.`id` AS `id`,`p`.`uniform_num` AS `uniform_num`,`p`.`position` AS `position`,`p`.`name` AS `name`,`p`.`club` AS `club`,`p`.`birth` AS `birth`,`p`.`height` AS `height`,`p`.`weight` AS `weight`,`c`.`name` AS `c_name`,`t`.`goals` AS `t_goals` from ((`players` `p` left join `c_names` `c` on((`p`.`id` = `c`.`id`))) left join `total_goals` `t` on((`p`.`id` = `t`.`id`))) order by `t`.`goals` desc,`p`.`club`,`p`.`uniform_num` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -278,4 +399,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-22 15:51:04
+-- Dump completed on 2020-08-23 12:02:56
