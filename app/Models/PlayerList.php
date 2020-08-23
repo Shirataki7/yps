@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Throwble;
 
-class P_list extends Model
+class PlayerList extends Model
 {
-    protected $table = "p_lists";
-    protected $dates =  ["expired_at", "deleted_at", "updated_at", "created_at"];
+
+    protected $table = "PlayerLists";
+    protected $dates = ["expired_at", "deleted_at", "updated_at", "created_at"];
 
     public static function getWithContoryBySimplePaginate($paginate_limit){
         try{

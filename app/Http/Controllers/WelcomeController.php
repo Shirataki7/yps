@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\P_list;
+use App\Models\PlayerList;
 use Throwable;
 
 class WelcomeController extends Controller
@@ -19,7 +19,7 @@ class WelcomeController extends Controller
     public function index()
     {
 	try{
-            $players = P_list::getWithContoryBySimplePaginate(self::PAGINATE_LIMIT);
+            $players = PlayerList::getWithContoryBySimplePaginate(self::PAGINATE_LIMIT);
             return view('welcome')->with('players', $players);
         } catch(Throwable $e) {
             abort(500);
