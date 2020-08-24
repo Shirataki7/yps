@@ -16,27 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Temporary table structure for view `PlayerLists`
---
-
-DROP TABLE IF EXISTS `PlayerLists`;
-/*!50001 DROP VIEW IF EXISTS `PlayerLists`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE VIEW `PlayerLists` AS SELECT 
- 1 AS `id`,
- 1 AS `uniform_num`,
- 1 AS `position`,
- 1 AS `name`,
- 1 AS `club`,
- 1 AS `birth`,
- 1 AS `height`,
- 1 AS `weight`,
- 1 AS `c_name`,
- 1 AS `t_goals`*/;
-SET character_set_client = @saved_cs_client;
-
---
 -- Table structure for table `countries`
 --
 
@@ -151,6 +130,27 @@ CREATE TABLE `pairings_tmp` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Temporary table structure for view `player_lists`
+--
+
+DROP TABLE IF EXISTS `player_lists`;
+/*!50001 DROP VIEW IF EXISTS `player_lists`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `player_lists` AS SELECT 
+ 1 AS `id`,
+ 1 AS `uniform_num`,
+ 1 AS `position`,
+ 1 AS `name`,
+ 1 AS `club`,
+ 1 AS `birth`,
+ 1 AS `height`,
+ 1 AS `weight`,
+ 1 AS `c_name`,
+ 1 AS `t_goals`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `players`
 --
 
@@ -225,10 +225,10 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Final view structure for view `PlayerLists`
+-- Final view structure for view `player_lists`
 --
 
-/*!50001 DROP VIEW IF EXISTS `PlayerLists`*/;
+/*!50001 DROP VIEW IF EXISTS `player_lists`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
@@ -237,7 +237,7 @@ CREATE TABLE `users` (
 /*!50001 SET collation_connection      = utf8mb4_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `PlayerLists` AS select `p`.`id` AS `id`,`p`.`uniform_num` AS `uniform_num`,`p`.`position` AS `position`,`p`.`name` AS `name`,`p`.`club` AS `club`,`p`.`birth` AS `birth`,`p`.`height` AS `height`,`p`.`weight` AS `weight`,`c`.`name` AS `c_name`,`t`.`goals` AS `t_goals` from ((`players` `p` left join `countries` `c` on((`p`.`country_id` = `c`.`id`))) left join `total_goals` `t` on((`p`.`id` = `t`.`id`))) order by `t`.`goals` desc,`p`.`club`,`p`.`uniform_num` */;
+/*!50001 VIEW `player_lists` AS select `p`.`id` AS `id`,`p`.`uniform_num` AS `uniform_num`,`p`.`position` AS `position`,`p`.`name` AS `name`,`p`.`club` AS `club`,`p`.`birth` AS `birth`,`p`.`height` AS `height`,`p`.`weight` AS `weight`,`c`.`name` AS `c_name`,`t`.`goals` AS `t_goals` from ((`players` `p` left join `countries` `c` on((`p`.`country_id` = `c`.`id`))) left join `total_goals` `t` on((`p`.`id` = `t`.`id`))) order by `t`.`goals` desc,`p`.`club`,`p`.`uniform_num` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -269,4 +269,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-23 13:11:27
+-- Dump completed on 2020-08-24  5:22:50

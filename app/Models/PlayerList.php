@@ -8,7 +8,7 @@ use Throwble;
 class PlayerList extends Model
 {
 
-    protected $table = "PlayerLists";
+    protected $table = "player_lists";
 
     public static function getWithContoryBySimplePaginate($paginate_limit){
         try{
